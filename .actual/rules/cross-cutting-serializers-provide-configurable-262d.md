@@ -4,7 +4,7 @@ These rules are ALWAYS ACTIVE for all Python projects utilizing pydantic-core se
 
 ### Rules
 
-- **R-SERIALIZERS-001** SHOULD: Serializers SHOULD provide configurable behavior through serialization context to handle format-specific requirements (JSON, Python dict, string output modes).
+- **R-SERIALIZERS-001** SHOULD: Serializers SHOULD provide configurable behavior through serialization context to handle format-specific requirements (JSON, Python dict, string serialization output formats).
 
 ### Verify
 
@@ -26,5 +26,5 @@ grep -r 'pub struct.*Serializer' pydantic-core/src/serializers/type_serializers/
 - Serializers accept and utilize serialization context parameters to enable format-specific behavior
 
 <enforcement>
-Claude Code MUST NOT skip or defer verification. All verify commands MUST execute successfully before accepting changes to serializer implementations. Code review MUST verify new serializers follow established patterns and handle serialization context appropriately.
+Claude Code MUST NOT skip or defer verification. All verification commands MUST execute successfully before accepting changes to serializer implementations. Code review MUST verify new serializers follow established patterns and handle serialization context appropriately.
 </enforcement>
