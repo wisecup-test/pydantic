@@ -26,5 +26,5 @@ grep -r 'pub struct.*Serializer' pydantic-core/src/serializers/type_serializers/
 - Sentinel value serializers correctly distinguish between explicit None and absent/undefined values in all output formats
 
 <enforcement>
-Claude Code MUST NOT skip or defer verification. All serializer implementations MUST pass the cargo test suite and follow established patterns before approval. Code review MUST verify that sentinel value serializers properly handle the distinction between None and undefined values.
+Claude Code MUST NOT skip or defer verification. All serializer implementations MUST pass the cargo test suite and follow established patterns before approval.
 </enforcement>
