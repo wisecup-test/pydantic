@@ -9,7 +9,7 @@ These rules are ALWAYS ACTIVE for all domain models requiring serialization in p
 ### Verify
 
 ```bash
-# Count type_serializers references in the serializers directory
+# Count type serializer references in the codebase
 grep -r "type_serializers" pydantic-core/src/serializers/ | wc -l
 
 # List all type serializer files
@@ -23,8 +23,8 @@ cargo test --package pydantic-core --lib serializers::type_serializers
 - Type serializer modules exist in `pydantic-core/src/serializers/type_serializers/` for all domain types requiring specialized serialization
 - All type serializers have corresponding test coverage with passing tests
 - Grep command returns at least 3 type serializer files (model.rs, timedelta.rs, missing_sentinel.rs)
-- Cargo test command exits with status 0 (all tests pass)
+- Cargo test suite passes with no failures
 
 <enforcement>
-Claude Code MUST NOT skip or defer verification. All type serializer implementations MUST pass the verify commands before acceptance. Code review MUST check for proper type serializer implementation. Architecture review MUST flag domain models with inline serialization logic as violations.
+Claude Code MUST NOT skip or defer verification. All type serializer implementations MUST pass the cargo test suite before acceptance. Code review MUST block merge if domain types lack appropriate type serializers. Architecture review MUST flag domain models with inline serialization logic as violations.
 </enforcement>

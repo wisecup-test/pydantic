@@ -15,7 +15,7 @@ find pydantic-core/src/serializers/type_serializers -name '*.rs' | xargs grep -l
 # Run comprehensive test suite for all serializer modules
 cargo test --package pydantic-core --lib serializers::type_serializers
 
-# Verify serializer struct definitions follow pattern
+# Verify consistent serializer structure across implementations
 grep -r 'pub struct.*Serializer' pydantic-core/src/serializers/type_serializers/
 ```
 
