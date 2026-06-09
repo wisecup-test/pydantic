@@ -26,5 +26,5 @@ python -c "import ast; import sys; [print(f'{sys.argv[1]}:{node.lineno}') for no
 - New code submissions include appropriate logging at key decision points and error handling paths
 
 <enforcement>
-Claude Code MUST NOT skip or defer verification. Automated CI/CD pipeline checks scanning for logging anti-patterns and sensitive data exposure are mandatory. Code review checklist items specifically covering logging standards and context inclusion are required. Static analysis tools configured to flag use of print/console.log in production code paths must be applied.
+Claude Code MUST NOT skip or defer verification. Automated CI/CD pipeline checks scanning for logging anti-patterns and sensitive data exposure are mandatory. Code review checklist items specifically covering logging standards and context inclusion are required. Static analysis tools configured to flag use of print/console.log in production code paths must pass before approval.
 </enforcement>
